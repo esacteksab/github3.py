@@ -821,15 +821,20 @@ class GitHub(GitHubCore):
             json = self._json(self._get(url), 200)
         return Key(json, self) if json else None
 
-    def login(self, username=None, password=None, token=None):
+    def login(self, username=None, password=None, token=None, otp=None):
         """Logs the user into GitHub for protected API calls.
 
         :param str username: (optional)
         :param str password: (optional)
         :param str token: (optional)
+        :param str otp: (optional)
         """
         if username and password:
             self._session.auth = (username, password)
+        elif otp:
+            self._sessionn.auth = (username, password)
+            self._session.headers.update({
+                'X-GitHub-OTP': '%s' %otp})
         elif token:
             self._session.headers.update({
                 'Authorization': 'token ' + token})
