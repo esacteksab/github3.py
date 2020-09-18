@@ -55,7 +55,7 @@ jobs:
       - name: Install Tox and any other packages
         run: pip install tox
       - name: Run Tox
-        run: tox
+        run: tox -v
         env:
           TOXENV: ${{ matrix.PYTHON.TOXENV }}
           GH_RECORD_MODE: "none"
