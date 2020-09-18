@@ -5,7 +5,9 @@ on: [push]
 jobs:
   test:
 
-    runs-on: [ ubuntu-latest, windows-latest ]
+    runs-on: 
+      - ubuntu-latest
+      - windows-latest
     strategy:
       matrix:
         python:
