@@ -40,11 +40,11 @@ jobs:
     strategy:
       matrix:
         python:
-          - { VERSION: "2.7", TOXENV: "py27", ALLOW_FAILURE: false }
-          - { VERSION: "3.5", TOXENV: "py35", ALLOW_FAILURE: false }
-          - { VERSION: "3.6", TOXENV: "py36", ALLOW_FAILURE: false }
-          - { VERSION: "3.7", TOXENV: "py37", ALLOW_FAILURE: false }
-          - { VERSION: "3.8", TOXENV: "py38", ALLOW_FAILURE: false }
+          - { VERSION: "2.7", TOXENV: "py27", ALLOW_FAILURE: true }
+          - { VERSION: "3.5", TOXENV: "py35", ALLOW_FAILURE: true }
+          - { VERSION: "3.6", TOXENV: "py36", ALLOW_FAILURE: true }
+          - { VERSION: "3.7", TOXENV: "py37", ALLOW_FAILURE: true }
+          - { VERSION: "3.8", TOXENV: "py38", ALLOW_FAILURE: true }
 
     steps:
       - uses: actions/checkout@v2
